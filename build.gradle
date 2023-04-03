@@ -35,13 +35,17 @@ dependencies {
 
     )
 }
-
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
 
 test {
     useJUnitPlatform()
 }
-task remote_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("remote")
-    }
+
 }
+    task property_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("remote")
+        }
+    }
