@@ -14,49 +14,40 @@ import java.util.Map;
 
 
 public class TestBase {
-        RegistrationPage registrationPage = new RegistrationPage();
+    RegistrationPage registrationPage = new RegistrationPage();
 
-        @BeforeAll
-        static void BeforeAllWithConfiguration() {
-      /*      Configuration.browserSize = "1920x1080";
-            Configuration.holdBrowserOpen = true;
-            Configuration.browser = "chrome";
-            Configuration.browserVersion = "100.0";
-            Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                    "enableVNC", true,
-                    "enableVideo", true
-            ));*/
-
-Configuration.baseUrl = System.getProperty("baseUrl","https://demoqa.com/");
-            Configuration.browserSize = System.getProperty("browserSize","1920x1080");
-            Configuration.browser = System.getProperty("browser","chrome");
-            Configuration.browserVersion = System.getProperty("browserVersion");
-            Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                    "enableVNC", true,
-                    "enableVideo", true
-            ));
+    @BeforeAll
+    static void BeforeAllWithConfiguration() {
 
 
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com/");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion");
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
 
 
-             Configuration.browserCapabilities = capabilities;}
+        Configuration.browserCapabilities = capabilities;
+    }
 
-             @BeforeEach
-                     void addListener() {
-                 SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-            }
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
+
     @AfterEach
-    void addAttachments(){
+    void addAttachments() {
         Attach.screenshotAs("Last screen");
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
     }
-        }
+}
 
 
 

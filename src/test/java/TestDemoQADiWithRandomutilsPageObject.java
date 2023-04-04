@@ -1,4 +1,5 @@
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static randomUtils.RandomUtils.getRandomEmail;
@@ -8,6 +9,7 @@ public class TestDemoQADiWithRandomutilsPageObject extends TestBase {
             lastNme = getRandomString(10),
             userEmail = getRandomEmail();
     @Test
+    @Tag("random")
     void fillTest() {
 
         registrationPage.openPage()
