@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static randomUtils.RandomUtils.getRandomEmail;
 import static randomUtils.RandomUtils.getRandomString;
+@Tag("random")
 public class TestDemoQADiWithRandomutilsPageObject extends TestBase {
     String userName = getRandomString(10),
             lastNme = getRandomString(10),
             userEmail = getRandomEmail();
     @Test
-    @Tag("random")
     void fillTest() {
 
         registrationPage.openPage()
