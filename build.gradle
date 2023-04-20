@@ -48,10 +48,10 @@ test {
         useJUnitPlatform {
             includeTags("remote")
         }
+    }
         task random_test(type: Test) {
             useJUnitPlatform {
                 includeTags("random")
             }
         }
 
-    }
