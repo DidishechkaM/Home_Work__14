@@ -14,5 +14,10 @@
     "token": "6121966847:AAGTvjZdxqpkXBQVUiNE5RaWYacxcNl-RrA",
     "chat": "-1001717567064",
     "replyTo": ""
+  },
+  "telegram": {
+    "token": "xoxb-364415920788-5152035711827-a3mwmwFTGWlcGDVpxZVNMoKq",
+    "chat": "#reporttest",
+    "replyTo": ""
   }
 }
